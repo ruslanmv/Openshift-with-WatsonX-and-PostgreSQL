@@ -32,7 +32,6 @@ To run this demo, you'll need to:
 5. Set up a PostgreSQL database with PgVector enabled
 6. Load the demo data into the database
 
-for more details 
 
 **Running the Demo**
 
@@ -45,3 +44,5 @@ This demo is for educational purposes only and is not intended for production us
 **License**
 
 This repository is licensed under the Apache 2.0 License. See the LICENSE file for details.
+
+
