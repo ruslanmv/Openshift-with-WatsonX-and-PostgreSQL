@@ -1,4 +1,4 @@
-**RAG with LangChain, WatsonX, and PostgreSQL in Openshift**
+## Openshift with WatsonX and PosgreSQL for RAG
 
 **Introduction**
 
@@ -25,10 +25,14 @@ This demo showcases the following components:
 
 To run this demo, you'll need to:
 
-1. Create a Watson Machine Learning (WML) Service instance
-2. Install the required dependencies, including LangChain, WatsonX, and PgVector
-3. Set up a PostgreSQL database with PgVector enabled
-4. Load the demo data into the database
+1. Create a Openshift instance with Elyra
+2. Create a server Postgre [here](./pgvector/README.md)
+3. Create a Watson Machine Learning (WML) Service instance
+4. Install the required dependencies, including LangChain, WatsonX, and PgVector
+5. Set up a PostgreSQL database with PgVector enabled
+6. Load the demo data into the database
+
+for more details 
 
 **Running the Demo**
 
