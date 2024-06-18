@@ -37,6 +37,10 @@ To run this demo, you'll need to:
 
 To run the demo, simply execute the provided Python script. The script will guide you through the RAG process, from document loading to querying the knowledge base.
 
+## Local Installation for testing
+If you are interested to ran locally this application  you can use the following insructions [here](./docker/README.md)
+
+
 **Note**
 
 This demo is for educational purposes only and is not intended for production use. Please ensure you have the necessary permissions and licenses to use the required components.
