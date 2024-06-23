@@ -1,38 +1,32 @@
-# How to Perform RAG with WatsonX in OpenShift with PostgreSQL pgvector
+# How to Perform RAG with WatsonX.ai, OpenShift AI using PostgreSQL pgvector
 
-In this tutorial, we will guide you through the steps of setting up a Retrieval-Augmented Generation (RAG) system using IBM WatsonX on OpenShift with PostgreSQL and pgvector. We will cover the following steps:
-1. Creation of the OpenShift instance server with JupyterLab and Python 3.11
+In this tutorial, we will guide you through the steps of setting up a Retrieval-Augmented Generation (RAG) system using IBM WatsonX.ai on OpenShift AI using PostgreSQL and pgvector. We will cover the following steps:
+
+1. Creation of an OpenShift cluster with OpenShift AI (JuypterLab, Python) running on it. 
 2. Creation of the PostgreSQL server with pgvector
 3. Creation of the notebook for setting up the vector database
 4. Creation of the notebook for implementing RAG with WatsonX and PostgreSQL
 5. A simple demo of execution
 6. Conclusion
 
-## 1. Creation of the OpenShift Instance Server with JupyterLab and Python 3.11
+## 1. Creation of the OpenShift cluster with OpenShift AI (JupyterLab and Python 3.11)
 
-First, we need to create an OpenShift instance and set up JupyterLab with Python 3.11. Follow these steps:
+ Follow these steps:
 
-1. **Login to OpenShift**: Use the OpenShift command-line interface (CLI) to log in to your OpenShift cluster.
-   ```bash
-   oc login --token=<your_token> --server=<your_server>
-   ```
+1. **Create an OpenShift cluster**: Using https://docs.openshift.com/container-platform/4.15/installing/index.html create an OpenShift cluster (either on prem or on public cloud)
 
-2. **Create a New Project**: Create a new project for your environment.
-   ```bash
-   oc new-project my-jupyterlab-project
-   ```
+2. **Install OpenShift AI**: In the OpenShift cluster, navigate to Operator hub and install OpenShift AI operator and install it.
+
 
 3. **Deploy JupyterLab**: Deploy JupyterLab with a custom Python 3.11 image.
-   ```bash
-   oc new-app jupyter/minimal-notebook:python-3.11 --name=jupyterlab
-   ```
+ https://github.com/opendatahub-io-contrib/workbench-images?tab=readme-ov-file#workbench-images-1 has a list of additional workbench images that are available for OpenShift AI.
+Import Jupyter Langchain (CUDA) image
+```
+   quay.io/opendatahub-contrib/workbench-images:cuda-jupyter-langchain-c9s-py311_2023c_latest
+```
 
-4. **Expose the JupyterLab Service**: Make JupyterLab accessible externally.
-   ```bash
-   oc expose svc/jupyterlab
-   ```
+   <img width="1663" alt="image" src="https://github.com/ruslanmv/Openshift-with-WatsonX-and-PostgreSQL/assets/19476054/ef849755-5279-4766-835a-35d4279c84c1">
 
-5. **Access JupyterLab**: Open the JupyterLab URL provided by the `oc get routes` command in your browser.
 
 ## 2. Creation of the PostgreSQL Server with pgvector
 
@@ -376,4 +370,4 @@ In your Jupyter notebook, execute the cells sequentially to set up the environme
 
 ## 6. Conclusion
 
-In this tutorial, we demonstrated how to set up a Retrieval-Augmented Generation system using IBM WatsonX on OpenShift with PostgreSQL and pgvector. We covered the creation of the OpenShift instance, deployment of PostgreSQL with pgvector, setting up the vector database, and implementing RAG with WatsonX. This setup enables efficient and effective retrieval of information, enhancing the capabilities of language models with a vector database backend.
+In this tutorial, we demonstrated how to set up a Retrieval-Augmented Generation system using IBM WatsonX.ai on OpenShift AI with PostgreSQL and pgvector. We covered the deployment of the Jupyter Langchain (CUDA) image on OpenShift AI, deployment of PostgreSQL with pgvector, setting up the vector database, and implementing RAG with WatsonX. This setup enables efficient and effective retrieval of information, enhancing the capabilities of language models with a vector database backend.
